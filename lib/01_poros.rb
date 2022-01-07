@@ -1,3 +1,4 @@
+# lib/01_poros.rb
 class Person
   def feeling_at(outside_temp)
     if outside_temp > 20
@@ -36,6 +37,8 @@ class Coat
   end
 end
 
+# You need to take care of the object's entire interface.
+# It doesn't address the "transparent interface" requirement.
 outside_temp = 30
 
 joe = Person.new
@@ -44,3 +47,4 @@ joe_shirt = Shirt.new(joe)
 puts joe_shirt.feeling_at(outside_temp)
 joe_coat = Coat.new(joe_shirt)
 puts joe_coat.feeling_at(outside_temp)
+puts "Class: #{joe_coat.class}"
